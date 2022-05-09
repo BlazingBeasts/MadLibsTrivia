@@ -45,7 +45,6 @@ func madLibs() {
   }
   // SciFi genre, same as other code but different questions and final story
 func SciFi()-> String {
-    let randomNum = Int.random(in: 0..<3)
     print("Give a noun")
     let noun = readLine()
     print("Give another noun")
@@ -76,7 +75,6 @@ func SciFi()-> String {
 }
 // Mystery genre, same as other code but different questions and final story
 func Mystery()-> String {
-    let randomNum = Int.random(in: 0..<3)
     print("Give an adjective")
     let adj1 = readLine()
     print("Give an adjective")
@@ -195,8 +193,6 @@ func Country()-> String {
     let title2 = readLine()
     print("Give a plural noun")
     let pluralNoun = readLine()
-    print("Give a noun")
-    let noun2 = readLine()
     print("Give an activity")
     let activity = readLine()
     print("Give a past-tense verb")
@@ -239,7 +235,7 @@ func realisticFiction()-> String {
 }
 var userInput = ""
 while userInput != "stop" { // continues playing until user tells to stop after each round
-    print("Hello player, are you ready to play MadLibs? \n First, you should pick what genre of MadLibs you want to play! \n There are 4 options: Fantasy, Sci-Fi, Mystery, or Fable, Pick one! If you're feeling lucky, then type random.") 
+    print("Hello player, are you ready to play MadLibs? \n First, you should pick what genre of MadLibs you want to play! \n There are 7 options: Fantasy, Sci-Fi, Mystery, Fable, Superhero, Country, or Realistic Fiction. Pick one! If you're feeling lucky, then type random.") 
     let genre = readLine()
     // check what genre user wants to play
 if genre == "Fantasy" {
@@ -257,11 +253,14 @@ else if genre == "Fable" {
 else if genre == "Superhero" {
     print(Superhero())
 }
+else if genre == "Country" {
+    print(Country())
+}
 else if genre == "Realistic Fiction" {
     print(realisticFiction())
 }
 else if genre == "random" { // randomizes genre for the user
-    let randomInt = Int.random(in: 0..<6)
+    let randomInt = Int.random(in: 0..<7)
     if randomInt == 0 {
         print(Fantasy())
     }
@@ -279,6 +278,9 @@ else if genre == "random" { // randomizes genre for the user
     }
     else if randomInt == 5 {
         print(realisticFiction())
+    }
+    else if randomInt == 6 {
+        print(Country())
     }
 }
 print("Would you like to play again? Type stop if you don't want to play again or type anything if you do want to play again.")
@@ -313,7 +315,7 @@ func Trivia() {
     func Geography() {
         print("You picked Geography questions! Now let's begin")
         let questions = ["What is Earth's largest continent?", "What is the smallest country in the world?", "Area 51 is located in which US state?", "What country touches the Indian Ocean, the Arabian Sea, and the Bay of Bengal?", "What's the city with the most diversity in terms of language?", "The ancient Phoenician city of Constantine is located in what modern-day Arab country?", "What country borders 14 nations and crosses 8 time zones?", "Havana is the capital of what country?", "What country has the most natural lakes?", "Riyadh is the capital of this Middle-Eastern country?", "Which Central American country has the name which translates to English as The Savior?", "What is the name of the biggest technology company in South Korea?"]
-        let answers = ["Asia", "Vatican City", "Nevada", "India", "New York City", "Algeria", "Russia", "Cuba", "Canada","Saudi Arabia", "El Salvador"]
+        let answers = ["Asia", "Vatican City", "Nevada", "India", "New York City", "Algeria", "Russia", "Cuba", "Canada","Saudi Arabia", "El Salvador", "Samsung"]
         var count = 0
         var points = 0
         for _ in questions {
